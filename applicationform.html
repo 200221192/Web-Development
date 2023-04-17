@@ -1,0 +1,268 @@
+<!--Design an application form 
+personal details
+ titles (drop down) 
+ full name
+ fathers name
+gender male female other radio button
+marital status drop down
+dob (date)
+category drop down
+religion drop down
+
+
+contact detail
+mobile number
+address
+email
+city
+pincode
+state drop down max 5
+
+
+qualification detail
+table form
+s.no 
+qualification (drop down) 10 12 ug pg
+board/university
+passing year
+percentage
+
+
+languages known
+hindi english check box
+identification detail
+
+adhar no. min len 12
+pan no.-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detail form</title>
+    <style>
+        body {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="backened.php">
+        <fieldset>
+            <legend>My Personal Details</legend>
+            <div>
+                <label for="title">Title:</label>
+                <select name="mytitle" id="title">
+                    <option value="Mr">Mr</option>
+                    <option value="Miss">Miss</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" name="myname" id="name" placeholder="full name required" required>
+            </div>
+            <br>
+            <div>
+                <label for="fname">Father's Name:</label>
+                <input type="text" name="myfname" id="fname" required>
+            </div>
+            <br>
+            <div>
+                <label for="gender">Gender: </label>
+                Male<input type="radio" name="mygender" id="gender">
+                Female<input type="radio" name="mygender" id="gender">
+                other<input type="radio" name="mygender" id="gender">
+            </div>
+            <br>
+            <div>
+                <label for="status">Marital status:</label>
+                <select name="mysta" id="status">
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="Dob">DOB: </label>
+                <input type="date" name="mydob" id="Dob">
+            </div>
+            <br>
+            <div>
+                <label for="cat">Category:</label>
+                <select name="mycat" id="cat">
+                    <option value="General">General</option>
+                    <option value="OBC">OBC</option>
+                    <option value="Sc/ST">SC/ST</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="religion">Religion:</label>
+                <select name="myrel" id="religion">
+                    <option value="Hindu">Hindu</option>
+                    <option value="Muslim">Muslim</option>
+                    <option value="Sikh">Sikh</option>
+                </select>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Contact</legend>
+            <div>
+                <label for="number">Contact No: </label>
+                <input type="number" name="mynumber" id="number">
+            </div>
+            <br>
+            <div>
+                <label for="address">Address: </label>
+                <input type="text" name="myaddr" id="address">
+            </div>
+            <br>
+            <div>
+                <label for="mail">Email: </label>
+                <input type="email" name="mymail" id="mail">
+            </div>
+            <br>
+            <div>
+                <label for="cit">City: </label>
+                <input type="text" name="mycity" id="cit">
+            </div>
+            <br>
+            <div>
+                <label for="pin">PinCode: </label>
+                <input type="number" name="mypin" id="pin">
+            </div>
+            <br>
+            <div>
+                <label for="state">State:</label>
+                <select name="mysta" id="state">
+                    <option value="bihar">Bihar</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="up">Up</option>
+                    <option value="karnatka">karnatka</option>
+                    <option value="chennai">chennai</option>
+                </select>
+            </div>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Qualification Details</legend>
+            <table>
+                <tr>
+                    <th>S.N0</th>
+                    <th>Qualification</th>
+                    <th>Board</th>
+                    <th>University</th>
+                    <th>Passing Year</th>
+                    <th>Percentage</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <label for="qulaification"></label>
+                        <select name="myqual" id="Qualification">
+                            <option value="10th">10th</option>
+                            <option value="12th">12th</option>
+                            <option value="UG">UG</option>
+                            <option value="PG">Pg</option>
+                            <option value="Phd">Phd</option>
+                        </select>
+                    </td>
+                    <td>
+                        <label for="borad"></label>
+                        <select name="myboard" id="board">
+                            <option value="cbse">cbse</option>
+                            <option value="Cisce">Cisce</option>
+                        </select>
+                    </td>
+                    <td>
+                        <label for="uni"></label>
+                        <select name="myuni" id="uni">
+                            <option value="GEU">GEU</option>
+                            <option value="GEHU">GEHU</option>
+                        </select>
+                    </td>
+                    <td>
+                        <label for="pass"></label>
+                        <select name="myyear" id="pass">
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="percentage1"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>
+                        <label for="qulaification"></label>
+                        <select name="myqual" id="Qualification">
+                            <option value="10th">10th</option>
+                            <option value="12th">12th</option>
+                            <option value="UG">UG</option>
+                            <option value="PG">Pg</option>
+                            <option value="Phd">Phd</option>
+                        </select>
+                    </td>
+                    <td>
+                        <label for="borad"></label>
+                        <select name="myboard" id="board">
+                            <option value="cbse">cbse</option>
+                            <option value="Cisce">Cisce</option>
+                        </select>
+                    </td>
+                    <td>
+                        <label for="uni"></label>
+                        <select name="myuni" id="uni">
+                            <option value="GEU">GEU</option>
+                            <option value="GEHU">GEHU</option>
+                        </select>
+                    </td>
+                    <td>
+                        <label for="pass"></label>
+                        <select name="myyear" id="pass">
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                        </select>
+                    </td>
+                    <td><input type="text" name="percentage2"></td>
+                </tr>
+            </table>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Languages Known</legend>
+            <label for="lang"></label>
+            Hindi<input type="checkbox" name="mylang" id="lang">
+            English<input type="checkbox" name="mylang" id="lang">
+            Spanish<input type="checkbox" name="mylang" id="lang">
+            German<input type="checkbox" name="mylang" id="lang">
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Identification Details</legend>
+            <label for="adhar">Adhar Card Number:</label>
+            <input type="text" name="adhar" id="adhar" pattern="[0-9]{12}" required><br><br>
+            <label for="pan">PAN Card Number:</label>
+            <input type="text" name="pan" id="pan" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" required>
+        </fieldset>
+        <br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+
+</body>
+
+</html>
