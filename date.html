@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date and time in js</title>
+    <style>
+        .container{
+            font-size: 23px;
+            background-color: beige;
+            border: 4px ;
+            text-align: center;
+            padding : 13px ;
+            margin: 4px;
+        }
+        #time{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        current time is <span id="time"></span>
+    </div>
+    <script>
+        console.log("this is date and time tutorial.");
+        let now = new Date();
+        console.log(now);
+
+        // if we pass any argument in object then if it is 0 then it will show the standard time and if 1000 then 1000 sec + standard time
+        let dt = new Date(1000);
+        console.log(dt);
+
+        let time = new Date("2028-07-12");
+        console.log(time);
+
+
+        //let newDate = new Date(year , month , date , hour , minute , second , milisecond);
+        let newDate = new Date(2030  , 4 , 3 , 9 , 7 , 34 , 30);
+        console.log(newDate);
+
+        let yr = newDate.getFullYear();
+        console.log("this year is", yr);
+
+        let dat = newDate.getDate()
+            console.log(dat);
+
+        let month = newDate.getMonth();
+        console.log(month);
+
+        let hour = newDate.getHours();
+        console.log(hour);
+
+        setInterval(updateTime , 1000);
+
+        function updateTime(){
+            time = new Date();
+            document.getElementById('time').innerHTML = time ;
+            //console.log(time);
+        }
+
+        // difference between two date
+        var date_diff_indays = function(date1, date2) {
+            dt1 = new Date(date1);
+            dt2 = new Date(date2);
+            return Math.floor((Date.UTC(dt2.getFullYear(), dt2.getMonth(), dt2.getDate()) - Date.UTC(dt1.getFullYear(), dt1.getMonth(), dt1.getDate()) ) /(1000 * 60 * 60 * 24));
+            }
+        console.log(date_diff_indays('04/02/2014', '11/04/2014'));
+        console.log(date_diff_indays('12/02/2014', '11/04/2014'));
+
+    </script>
+
+</body>
+</html>
