@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>form validation using javascript</title>
+    <style>
+        #container {
+            border: 2px solid black;
+            border-radius: 10px;
+            width: 40%;
+            margin: 140px 450px;
+            padding: 30px 30px;
+            justify-content: center;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 30px;
+            font-weight: bold;
+            color: rgb(41, 146, 175);
+        }
+
+        #btn {
+            background-color: rgb(72, 155, 203);
+            border: 2px solid black;
+            border-radius: 4px;
+            padding: 4px 4px;
+            margin: auto 20px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="container">
+        <h3>FORM</h3>
+        <form name="myform" onsubmit="return validateForm()" method="post">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" placeholder="Enter your Name">
+            </div>
+            <br>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="Enter your Email">
+            </div>
+            <br>
+            <div>
+                <label for="pass">Password:</label>
+                <input type="password" name="pass" id="pass" placeholder="Enter your Password">
+            </div>
+            <br>
+            <div>
+                <label for="renter">Re-enter Password:</label>
+                <input type="password" name="renter" id="renter" placeholder="Re-enter your Password">
+            </div>
+            <br>
+            <div>
+                <button id="btn" type="submit">Submit</button>
+                <button id="btn" type="reset">reset</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            let x = document.forms["myform"]["name"].value;
+            let password = document.forms["myform"]["pass"].value;
+            let repass = document.forms["myform"]["renter"].value;
+            let email = document.forms["myform"]["email"].value;
+            var atposition = email.indexOf("@");
+            var dotposition = email.lastIndexOf(".");
+
+            //name or text validation
+            if (x.match(/[0-9]/)) {
+                // notify the user about their mistake 
+                alert("Avoid numbers in the first name field, please.");
+                // focus the field to make it easy to correct 
+                name.focus();
+                // prevent the form from submitting 
+                return false;
+            }
+
+            if (x == "" || x == null) {
+                alert("Name must be filled out");
+                return false;
+            }
+            //email validation
+            else if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= email.length) {
+                alert("Please enter a valid e-mail address \n atpostion:" + atposition + "\n dotposition:" + dotposition);
+                return false;
+            }
+            // password length validation
+            else if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+            //password reenter validationw
+            else if (password != null && repass != null) {
+                if (password == repass)
+                    return true;
+                else {
+                    alert("please enter the same password");
+                    return false;
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
